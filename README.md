@@ -8,5 +8,7 @@ Meus arquivos de configuração para:
 * **vim** (.vimrc)
 * **Conky** (.config/conky/conky.conf)
 * **I3** (.config/i3/config)
+* **Konsole** (~/.config/konsolerc ~/.local/share/konsole)
+* **openbox** (~/.config/openbox)
 ## Requisitos
 1. ohmyzsh https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
