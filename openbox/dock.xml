@@ -1,0 +1,23 @@
+<dock>
+
+  <position>TopLeft</position>
+
+  <stacking>Normal</stacking>
+
+  <direction>Vertical</direction>
+
+  <floatingX>0</floatingX>
+
+  <floatingY>0</floatingY>
+
+  <autoHide>no</autoHide>
+
+  <hideDelay>300</hideDelay>
+
+  <showDelay>300</showDelay>
+
+  <moveButton>Button8</moveButton>
+
+  <noStrut>yes</noStrut>
+
+</dock>
