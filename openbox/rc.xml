@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Natura</name>
+    <name>Neon_Knights_Blue_Ob</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -177,14 +177,14 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="XF86AudioRaiseVolume">
-    	<action name="Execute">
-    		<command>pactl set-sink-volume 0 +5%</command>
-    	</action>
+      <action name="Execute">
+        <command>pactl set-sink-volume 0 +5%</command>
+      </action>
     </keybind>
-	<keybind key="XF86AudioLowerVolume">
-    	<action name="Execute">
-    		<command>pactl set-sink-volume 0 -5%</command>
-    	</action>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume 0 -5%</command>
+      </action>
     </keybind>
     <keybind key="C-A-Left">
       <action name="GoToDesktop"/>
@@ -192,6 +192,11 @@
     <keybind key="W-space">
       <action name="Execute">
         <command>cool-retro-term</command>
+      </action>
+    </keybind>
+    <keybind key="A-D">
+      <action name="Execute">
+        <command>dmenu_run</command>
       </action>
     </keybind>
     <keybind key="C-A-Right">
