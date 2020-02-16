@@ -176,6 +176,11 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="0x6b">
+    	<action name="Execute">
+    	 <command>xfce4-screenshooter</command>
+    	 </action>
+    </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>pactl set-sink-volume 0 +5%</command>
