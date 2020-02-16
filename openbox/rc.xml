@@ -194,9 +194,9 @@
     <keybind key="C-A-Left">
       <action name="GoToDesktop"/>
     </keybind>
-    <keybind key="W-space">
+    <keybind key="W-0x24">
       <action name="Execute">
-        <command>cool-retro-term</command>
+        <command>konsole</command>
       </action>
     </keybind>
     <keybind key="A-D">
