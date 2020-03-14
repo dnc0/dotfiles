@@ -1,0 +1,7 @@
+openbox:
+-bind para abrir calculadora
+-bind para mover janelas para outros workspaces
+-bind para movimentar janelas(para os cantos)
+-bind de maximizar e minimizar
+-menu custom
+-win+enter usar a variavel de ambiente para abrir o terminal
