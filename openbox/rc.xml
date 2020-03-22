@@ -180,6 +180,14 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+      <!-- bind trocar tela cheia Super + Down-->
+      <keybind key="W-Down">
+        <action name="ToggleFullscreen"/>
+      </keybind>
+      <!-- bind minimizar Super + Up -->
+      <keybind key="W-Up">
+       <action name="Iconify"/>
+       </keybind>
     <!--  bind para trocar o tamanho da janela-->
     <keybind key="W-KP_Divide">
       <action name="MoveResizeTo">
@@ -193,20 +201,22 @@
     </keybind>
     <!-- binds para mover janela -->
     <keybind key="W-KP_4">
-      <action name="Unmaximize"/>
+         <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
         <width>50%</width>
       </action>
-      <action name="MoveToEdgeWest"/>
     </keybind>
     <keybind key="W-KP_6">
-      <action name="Unmaximize"/>
+    <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
         <width>50%</width>
       </action>
-      <action name="MoveToEdgeEast"/>
     </keybind>
     <!-- bind para trocar o foco da janela-->
       <keybind key="C-Left">	<action name="DirectionalFocusWest"/>		</keybind>
