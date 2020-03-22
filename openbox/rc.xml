@@ -180,26 +180,7 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="W-KP_8">
-      <action name="MoveResizeTo">
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-KP_6">
-      <action name="MoveResizeTo">
-        <x>-0</x>
-      </action>
-    </keybind>
-    <keybind key="W-KP_2">
-      <action name="MoveResizeTo">
-        <y>-0</y>
-      </action>
-    </keybind>
-    <keybind key="W-KP_4">
-      <action name="MoveResizeTo">
-        <x>0</x>
-      </action>
-    </keybind>
+    <!--  bind para trocar o tamanho da janela-->
     <keybind key="W-KP_Divide">
       <action name="MoveResizeTo">
         <width>960</width>
@@ -210,6 +191,27 @@
         <width>1200</width>
       </action>
     </keybind>
+    <!-- binds para mover janela -->
+    <keybind key="W-KP_4">
+      <action name="Unmaximize"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="Unmaximize"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
+    </keybind>
+    <!-- bind para trocar o foco da janela-->
+      <keybind key="C-Left">	<action name="DirectionalFocusWest"/>		</keybind>
+      <keybind key="C-Right">	<action name="DirectionalFocusEast"/>		</keybind>
+    <!-- bind para percorrer os todos os desktops Super+Left,Right-->
     <keybind key="W-Right">
       <action name="DesktopRight">
         <wrap>no</wrap>
@@ -220,6 +222,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!-- bind para mover a janela para o proximo(ou anterior) desktop-->
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft">
         <wrap>no</wrap>
@@ -230,6 +233,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!-- mostra o menu openbox Super-->
     <keybind key="Super_L">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -250,9 +254,6 @@
         <command>pactl set-sink-volume 0 -5%</command>
       </action>
     </keybind>
-    <keybind key="C-A-Left">
-      <action name="GoToDesktop"/>
-    </keybind>
     <keybind key="W-0x24">
       <action name="Execute">
         <command>konsole</command>
@@ -268,27 +269,7 @@
         <follow>no</follow>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop"/>
-    </keybind>
+    <!-- bind ir para desktop Super + F1,F2,...-->
     <keybind key="W-F1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -305,8 +286,41 @@
       </action>
     </keybind>
     <keybind key="W-F4">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
     </keybind>
+    <keybind key="W-F5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-F6">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="GoToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+    <keybind key="W-F9">
+      <action name="GoToDesktop">
+        <to>9</to>
+      </action>
+    </keybind>
+    <keybind key="W-F10">
+      <action name="GoToDesktop">
+        <to>10</to>
+      </action>
+    </keybind>
+
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
