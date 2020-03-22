@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Neon_Knights_Blue_Ob</name>
+    <name>Simply_Circles_Blue_Light</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -180,11 +180,61 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="W-KP_8">
+      <action name="MoveResizeTo">
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="MoveResizeTo">
+        <x>-0</x>
+      </action>
+    </keybind>
+    <keybind key="W-KP_2">
+      <action name="MoveResizeTo">
+        <y>-0</y>
+      </action>
+    </keybind>
+    <keybind key="W-KP_4">
+      <action name="MoveResizeTo">
+        <x>0</x>
+      </action>
+    </keybind>
+    <keybind key="W-KP_Divide">
+      <action name="MoveResizeTo">
+        <width>960</width>
+      </action>
+    </keybind>
+    <keybind key="W-A-KP_Divide">
+      <action name="MoveResizeTo">
+        <width>1200</width>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="DesktopRight">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="DesktopLeft">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-W-Left">
+      <action name="SendToDesktopLeft">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-W-Right">
+      <action name="SendToDesktopRight">
+        <wrap>no</wrap>
+      </action>
+    </keybind>
     <keybind key="Super_L">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
-      </keybind>
+    </keybind>
     <keybind key="0x6b">
       <action name="Execute">
         <command>xfce4-screenshooter</command>
