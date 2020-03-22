@@ -118,13 +118,17 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>10</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>D1</name>
+      <name>D2</name>
+      <name>D3</name>
+      <name>D4</name>
+      <name>D5</name>
+      <name>D6</name>
+      <name>D7</name>
+      <name>D8</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -176,10 +180,15 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="Super_L">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+      </keybind>
     <keybind key="0x6b">
-    	<action name="Execute">
-    	 <command>xfce4-screenshooter</command>
-    	 </action>
+      <action name="Execute">
+        <command>xfce4-screenshooter</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -232,17 +241,17 @@
     </keybind>
     <keybind key="W-F1">
       <action name="GoToDesktop">
-      <to>1</to>
+        <to>1</to>
       </action>
     </keybind>
     <keybind key="W-F2">
       <action name="GoToDesktop">
-      <to>2</to>
+        <to>2</to>
       </action>
     </keybind>
     <keybind key="W-F3">
       <action name="GoToDesktop">
-      <to>3</to>
+        <to>3</to>
       </action>
     </keybind>
     <keybind key="W-F4">
