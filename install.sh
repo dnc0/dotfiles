@@ -5,14 +5,14 @@ newversion=$(date +%d/%m/%Y-%H%M)
 function backup(){
 	sufix=$newversion
 	echo "Fazendo backup dos arquivos de configuração"
-	cp -v "$HOME/.vimrc $HOME/.vimrc.$sufix"
-	cp -v "$HOME/.zshrc $HOME/.zshrc.$sufix"
-	cp -v "$HOME/.tmux.conf $HOME/.tmux.conf.$sufix"
-	cp -v -r "$HOME/.config/openbox $HOME/.config/openbox.$sufix"
-	cp -v "$HOME/.config/konsolerc $HOME/.config/konsolerc.$sufix"
-	cp -v -r "$HOME/.local/share/konsole $HOME/.local/share/konsole.$sufix"
-	cp -v "$HOME/.config/conky/conky.conf $HOME/.config/conky/conky.conf.$sufix"
-	cp -v "$HOME/.config/i3/config $HOME/.config/i3/config.$sufix"
+	cp -v $HOME/.vimrc $HOME/.vimrc.$sufix
+	cp -v $HOME/.zshrc $HOME/.zshrc.$sufix
+	cp -v HOME/.tmux.conf $HOME/.tmux.conf.$sufix
+	cp -v -r $HOME/.config/openbox $HOME/.config/openbox.$sufix
+	cp -v $HOME/.config/konsolerc $HOME/.config/konsolerc.$sufix
+	cp -v -r $HOME/.local/share/konsole $HOME/.local/share/konsole.$sufix
+	cp -v $HOME/.config/conky/conky.conf $HOME/.config/conky/conky.conf.$sufix
+	cp -v $HOME/.config/i3/config $HOME/.config/i3/config.$sufix
 }
 
 function restore(){
@@ -40,19 +40,5 @@ function copy(){
 }
 
 #Inicio da execução
-while [ "$1" != "" ];do
-  case $1 in
-    -b | --backup )
-		backup
-		;;
-    -r | --restore )
-        restore
-        ;;
-    -i | --install )
-        copy
-        ;;
-    * )
-      ;;
-    esac
-    shift
-done
+
+copy
