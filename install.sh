@@ -29,14 +29,14 @@ function restore(){
 
 function copy(){
 	echo "Instalando os arquivos..."
-	cp -v "vimrc $HOME/.vimrc"
-	cp -v "zshrc $HOME/.zshrc"
-	cp -v "tmux.conf $HOME/.tmux.conf"
-	cp -v -r "openbox $HOME/.config/"
-	cp -v "konsolerc $HOME/.config/"
-	cp -v -r "konsole $HOME/.local/share"
-	cp -v "conky.conf $HOME/.config/conky/conky.conf"
-	cp -v "i3config $HOME/.config/i3/config"
+	mv -v "vimrc $HOME/.vimrc"
+	mv -v "zshrc $HOME/.zshrc"
+	mv -v "tmux.conf $HOME/.tmux.conf"
+	mv -v -r "openbox $HOME/.config/"
+	mv -v "konsolerc $HOME/.config/"
+	mv -v -r "konsole $HOME/.local/share"
+	mv -v "conky.conf $HOME/.config/conky/conky.conf"
+	mv -v "i3config $HOME/.config/i3/config"
 }
 
 #Inicio da execução
