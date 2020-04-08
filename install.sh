@@ -6,18 +6,18 @@ function copy(){
 	cp -v tmux.conf $HOME/.tmux.conf
 	cp -v zshrc $HOME/.zshrc
 	mkdir -p $HOME/.config/openbox
-	cp -v -r openbox $HOME/.config/openbox
+	cp -v -r openbox $HOME/.config/
 	mkdir -p $HOME/.local/share/konsole
-	cp -v -r konsole $HOME/.local/share/konsole
+	cp -v -r konsole $HOME/.local/share
 	cp -v konsolerc $HOME/.config
 	mkdir -p $HOME/.config/conky/ 
-	cp -v conky.conf $HOME/.config/conky/
+	cp -v conky.conf $HOME/.config
 	mkdir -p $HOME/.config/xfce4/xfconf/xfce-perchannel-xml
-	cp -v -r xfce4 $HOME/.config/xfce4/xfconf/xfce-perchannel-xml
+	cp -v -r xfce4 $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
 }
 
-functions mk_xinit(){
-	echo "openbox-session" >> $HOME/.Xinitrc
+function mk_xinit(){
+	echo "openbox-session" >> $HOME/.xinitrc
 }
 
 #Inicio da execução
