@@ -11,7 +11,7 @@ function copy(){
 	cp -v -r konsole $HOME/.local/share
 	cp -v konsolerc $HOME/.config
 	mkdir -p $HOME/.config/conky/ 
-	cp -v conky.conf $HOME/.config
+	cp -v conky.conf $HOME/.config/conky
 	cp -v -r xfce4 $HOME/.config/
 }
 
