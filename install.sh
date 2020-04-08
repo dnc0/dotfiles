@@ -12,8 +12,7 @@ function copy(){
 	cp -v konsolerc $HOME/.config
 	mkdir -p $HOME/.config/conky/ 
 	cp -v conky.conf $HOME/.config
-	mkdir -p $HOME/.config/xfce4/xfconf/xfce-perchannel-xml
-	cp -v -r xfce4 $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
+	cp -v -r xfce4 $HOME/.config/
 }
 
 function mk_xinit(){
