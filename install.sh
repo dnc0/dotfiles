@@ -9,6 +9,7 @@ function copy(){
 	cp -v -r konsole $HOME/.local/share
 	cp -v konsolerc $HOME/.config
 	cp -v conky.conf $HOME/.config/conk
+	cp -v -r openbox $HOME/.config/xfce4/xfconf/xfce-perchannel-xml
 }
 
 #Inicio da execução
