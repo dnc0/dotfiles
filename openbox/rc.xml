@@ -180,6 +180,12 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+      <!-- bind para sair-->
+      <keybind key="W-Pause">
+        <action name="Exit">
+          <prompt>yes</prompt>
+        </action>
+      </keybind>
       <!-- bind trocar tela cheia Super + Down-->
       <keybind key="W-Down">
         <action name="ToggleFullscreen"/>
