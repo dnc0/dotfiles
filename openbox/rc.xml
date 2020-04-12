@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Simply_Circles_Blue_Light</name>
+    <name>Bear2</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -129,6 +129,8 @@
       <name>D6</name>
       <name>D7</name>
       <name>D8</name>
+      <name>D9</name>
+      <name>D10</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -180,34 +182,47 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-      <!-- bind para sair-->
-      <keybind key="W-Pause">
-        <action name="Exit">
-          <prompt>yes</prompt>
-        </action>
-      </keybind>
-      <!-- bind trocar tela cheia Super + Down-->
-      <keybind key="W-Down">
-        <action name="ToggleFullscreen"/>
-      </keybind>
-      <!-- bind minimizar Super + Up -->
-      <keybind key="W-Up">
-       <action name="Iconify"/>
-       </keybind>
-    <!--  bind para trocar o tamanho da janela-->
+    <!-- bind para reinciar o openbox-->
+    <keybind key="W-Delete">
+        <action name="Restart"/>
+    </keybind>
+    <!-- bind sair da sessao-->
+    <keybind key="W-Pause">
+      <action name="Exit"/>
+    </keybind>
+    <!-- bind minimizar janela-->
+    <keybind key="W-Down">
+      <action name="Iconify"/>
+    </keybind>
+    <!-- bind maximizar janela-->
+    <keybind key="W-Up">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <!-- bind janela centralizada tamanho pequeno-->
     <keybind key="W-KP_Divide">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>960</width>
+        <width>900</width>
+      </action>
+      <action name="MoveResizeTo">
+        <x>center</x>
       </action>
     </keybind>
-    <keybind key="W-A-KP_Divide">
+    <!-- bind janela centralizada tamanho medio-->
+    <keybind key="W-KP_Multiply">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
         <width>1200</width>
       </action>
+       <action name="MoveResizeTo">
+        <x>center</x>
+      </action>
     </keybind>
-    <!-- binds para mover janela -->
+    <!-- move a janela para a esquerda-->
     <keybind key="W-KP_4">
-         <action name="UnmaximizeFull"/>
+      <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -215,8 +230,9 @@
         <width>50%</width>
       </action>
     </keybind>
+     <!-- move a janela para a direita-->
     <keybind key="W-KP_6">
-    <action name="UnmaximizeFull"/>
+      <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
         <x>-0</x>
@@ -224,42 +240,59 @@
         <width>50%</width>
       </action>
     </keybind>
-    <!-- bind para trocar o foco da janela-->
-      <keybind key="C-Left">	<action name="DirectionalFocusWest"/>		</keybind>
-      <keybind key="C-Right">	<action name="DirectionalFocusEast"/>		</keybind>
-    <!-- bind para percorrer os todos os desktops Super+Left,Right-->
+    <!-- move a janela para o centro-->
+    <keybind key="W-KP_5">
+    <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+      </action>
+    </keybind>
+    <!-- bind para mover janela para o desktop à esquerda-->
+    <keybind key="C-Left">
+      <action name="DirectionalFocusWest"/>
+    </keybind>
+    <!-- bind para mover janela para o desktop à direita-->
+    <keybind key="C-Right">
+      <action name="DirectionalFocusEast"/>
+    </keybind>
+    <!-- bind ir para o desktop da direita-->
     <keybind key="W-Right">
       <action name="DesktopRight">
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!-- bind ir para o desktop da esquerda-->
     <keybind key="W-Left">
       <action name="DesktopLeft">
         <wrap>no</wrap>
       </action>
     </keybind>
-    <!-- bind para mover a janela para o proximo(ou anterior) desktop-->
+    <!-- bind mover janela para o desktop da esquerda-->
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft">
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!-- bind mover janela para o desktop da direita-->
     <keybind key="S-W-Right">
       <action name="SendToDesktopRight">
         <wrap>no</wrap>
       </action>
     </keybind>
-    <!-- mostra o menu openbox Super-->
+    <!-- bind menu openbox-->
     <keybind key="Super_L">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
     </keybind>
+    <!-- bind print-screen-->
     <keybind key="0x6b">
       <action name="Execute">
         <command>xfce4-screenshooter</command>
       </action>
     </keybind>
+    <!-- binds de volume-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>pactl set-sink-volume 0 +5%</command>
@@ -270,6 +303,7 @@
         <command>pactl set-sink-volume 0 -5%</command>
       </action>
     </keybind>
+    <!--bind para abrir o terminal-->
     <keybind key="W-0x24">
       <action name="Execute">
         <command>konsole</command>
@@ -281,62 +315,38 @@
       </action>
     </keybind>
     <keybind key="W-Tab">
-      <action name="DesktopPrevious">
-        <follow>no</follow>
-      </action>
+      <action name="DesktopPrevious"/>
     </keybind>
-    <!-- bind ir para desktop Super + F1,F2,...-->
     <keybind key="W-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F5">
-      <action name="GoToDesktop">
-        <to>5</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F6">
-      <action name="GoToDesktop">
-        <to>6</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F7">
-      <action name="GoToDesktop">
-        <to>7</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F8">
-      <action name="GoToDesktop">
-        <to>8</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F9">
-      <action name="GoToDesktop">
-        <to>9</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-F10">
-      <action name="GoToDesktop">
-        <to>10</to>
-      </action>
+      <action name="GoToDesktop"/>
     </keybind>
-
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -365,6 +375,7 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <!--
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows"/>
     </keybind>
@@ -377,22 +388,14 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>kfmclient openProfile filemanagement</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-      </action>
-    </keybind>
+    -->
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>400</screenEdgeWarpTime>
+    <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
