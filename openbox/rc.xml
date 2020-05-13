@@ -280,7 +280,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <!-- bind menu openbox-->
+    <!-- bind menu openbox -->
     <keybind key="Super_L">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -295,14 +295,20 @@
     <!-- binds de volume-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 0 +5%</command>
+        <command>sh -c 'pactl set-sink-volume $(pactl list short sinks | cut -f1) +5%'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume 0 -5%</command>
+        <command>sh -c 'pactl set-sink-volume $(pactl list short sinks | cut -f1) -5%'</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+      <command>sh -c 'pactl set-sink-mute $(pactl list short sinks | cut -f1) toggle'</command>
+      </action>
+    </keybind>
+
     <!--bind para abrir o terminal-->
     <keybind key="W-0x24">
       <action name="Execute">
@@ -316,36 +322,6 @@
     </keybind>
     <keybind key="W-Tab">
       <action name="DesktopPrevious"/>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F5">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F6">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F7">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F8">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F9">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F10">
-      <action name="GoToDesktop"/>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -375,20 +351,6 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
-    <!--
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    -->
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
