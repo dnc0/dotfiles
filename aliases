@@ -1,3 +1,0 @@
-alias "pgrep"="ps aux | grep $1"
-alias "ll"="ls -lh"
-alias "now"="date +%H:%M:%S-%d/%m/%Y"

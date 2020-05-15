@@ -1,27 +1,4 @@
 openbox:
 -bind para abrir calculadora
--bind para mover janelas para outros workspaces
--bind para movimentar janelas(para os cantos)
--bind de maximizar e minimizar
 -menu custom
--win+enter usar a variavel de ambiente para abrir o terminal
-
-instalador:
--verificar se existem os diretorios dos arquivos de configuração
-
-
-OUT FILE
-'vimrc' -> '/home/fat/.vimrc'
-'tmux.conf' -> '/home/fat/.tmux.conf'
-'zshrc' -> '/home/fat/.zshrc'
-'openbox' -> '/home/fat/.config'
-'openbox/rc.xml' -> '/home/fat/.config/rc.xml'
-'openbox/environment' -> '/home/fat/.config/environment'
-'openbox/menu.xml' -> '/home/fat/.config/menu.xml'
-'openbox/dock.xml' -> '/home/fat/.config/dock.xml'
-'openbox/autostart' -> '/home/fat/.config/autostart'
-cp: não foi possível criar o diretório '/home/fat/.local/share': Arquivo ou diretório inexistente
-'konsolerc' -> '/home/fat/.config/konsolerc'
-cp: não foi possível abrir 'konsolerc' para leitura: Permissão negada
-'conky.conf' -> '/home/fat/.config/conk'
 

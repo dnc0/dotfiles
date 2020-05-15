@@ -16,13 +16,11 @@
 #
 #xfce-mcs-manager &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#cool-retro-term &
 setxkbmap -layout br
-#feh --bg-scale ~/wallpaper.jpg
+feh --bg-scale ~/wallpaper.jpg
 conky &
 picom -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88 -b
 $terminal &
 xfsettingsd
 #$HOME/.config/polybar/launch.sh
 xfce4-panel
-notify-send "iniciando" "teste"

@@ -1,12 +1,12 @@
 [Desktop Entry]
-DefaultProfile=xt.profile
+DefaultProfile=nxt.profile
 
 [DownloadDialog Settings]
 Height 1080=580
 Width 2560=1257
 
 [Favorite Profiles]
-Favorites=xt.profile
+Favorites=nxt.profile
 
 [KonsoleWindow]
 ShowMenuBarByDefault=false

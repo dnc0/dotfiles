@@ -2,6 +2,7 @@
 
 Meus arquivos de configuração para:
 * **zsh shell** (.zshrc)
+* **bash shell** (.bashrc)
 * **tmux** (.tmux.conf)
 * **smb** (.smb.conf)
 * **vim** (.vimrc)
