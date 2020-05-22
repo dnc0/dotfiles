@@ -6,6 +6,7 @@ echo "adicioando usuario"
 sudo useradd -m tt
 echo "senha para novo usuario "
 sudo passwd tt
-sudo cp -r /home/work/projetos/dotfiles /home/tt
+sudo echo "git clone https://github.com/dnc0/dotfiles" > /home/tt/script.sh
+sudo chmod o+x /home/tt/script.sh
 echo "login do usuario"
 su tt

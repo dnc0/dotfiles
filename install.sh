@@ -13,6 +13,7 @@ function copy(){
 	mkdir -p $HOME/.config/conky/ 
 	cp -v conky.conf $HOME/.config/conky
 	cp -v -r xfce4 $HOME/.config/
+	cp -v xfce4-local $HOME/.local/share/
 	#sudo chown -Rv $USER $HOME/.config/
 	cp -v bashrc $HOME/.bashrc
 }
@@ -22,6 +23,5 @@ function mk_xinit(){
 }
 
 #Inicio da execução
-
 copy
 mk_xinit

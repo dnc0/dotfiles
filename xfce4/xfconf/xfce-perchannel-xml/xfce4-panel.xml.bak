@@ -15,7 +15,8 @@
         <value type="int" value="7"/>
         <value type="int" value="15"/>
         <value type="int" value="16"/>
-        <value type="int" value="1"/>
+        <value type="int" value="17"/>
+        <value type="int" value="19"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -34,8 +35,8 @@
       <property name="grouping" type="uint" value="1"/>
       <property name="show-labels" type="bool" value="true"/>
       <property name="flat-buttons" type="bool" value="false"/>
-      <property name="sort-order" type="uint" value="0"/>
-      <property name="show-handle" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="2"/>
+      <property name="show-handle" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -62,6 +63,7 @@
       <property name="show-notifications" type="bool" value="true"/>
       <property name="mpris-players" type="string" value="chromium.instance2592;chromium.instance2760;vlc"/>
     </property>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
@@ -92,9 +94,14 @@
         <value type="string" value="15767840105.desktop"/>
       </property>
     </property>
-    <property name="plugin-1" type="string" value="launcher">
+    <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15901192931.desktop"/>
+        <value type="string" value="15767840416.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-19" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15767841367.desktop"/>
       </property>
     </property>
   </property>
