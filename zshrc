@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/work/.oh-my-zsh"
+#export ZSH="/home/work/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,4 +107,23 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 calc(){
         echo "scale=2;$*" | bc -l
+}
+nota(){
+        note_file="$HOME/.notas"
+        if [ "$#" -eq 0 ];then
+                cat "$note_file"
+        elif [ "$1" = "-c" ];then
+                printf "" > "$note_file"
+        elif [ "$1" = "-e" ];then
+                vim "$note_file"
+        elif [ "$1" = "-h" ];then
+                echo "notas version $_version";
+                echo "opçoes:"
+                echo "  <nenhum argumeto> :listar o arquivo de notas"
+                echo "  <texto> :adiciona o texto no arquivo de notas"
+                echo "  -c :apagar arquivo de notas"
+                echo "  -e :editar arquivo de notas"
+        else
+                echo "$*" >> "$note_file"
+        fi
 }

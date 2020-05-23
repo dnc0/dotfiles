@@ -11,5 +11,4 @@ Meus arquivos de configuração para:
 * **Konsole** (~/.config/konsolerc ~/.local/share/konsole)
 * **openbox** (~/.config/openbox)
 * **XFCE4 Painel** (~/.config/xfce4/xfconf/xfce-perchannel-xml)
-## Requisitos
-1. ohmyzsh https://github.com/ohmyzsh/ohmyzsh
+

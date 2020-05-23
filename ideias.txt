@@ -1,4 +1,2 @@
 openbox:
--bind para abrir calculadora
 -menu custom
-

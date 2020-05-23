@@ -300,6 +300,24 @@
         <command>xfce4-screenshooter</command>
       </action>
     </keybind>
+     <!-- bind media player -->
+     <keybind key="XF86Tools">
+      <action name="Execute">
+        <command>vlc</command>
+      </action>
+    </keybind>
+    <!-- bind thunar -->
+     <keybind key="XF86Search">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <!-- bind calculadora -->
+     <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>kcalc</command>
+      </action>
+    </keybind>
     <!-- binds de volume-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -319,7 +337,7 @@
     <!--bind para abrir o terminal-->
     <keybind key="W-0x24">
       <action name="Execute">
-        <command>konsole</command>
+        <command>sh -c '$TERMINAL_PADRAO'</command>
       </action>
     </keybind>
     <keybind key="A-D">
@@ -327,38 +345,70 @@
         <command>dmenu_run</command>
       </action>
     </keybind>
+    <!-- bind mudar de desktop -->
     <keybind key="W-Tab">
       <action name="DesktopPrevious"/>
     </keybind>
     <keybind key="W-F1">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>1</to></action>
     </keybind>
     <keybind key="W-F2">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>2</to></action>
     </keybind>
     <keybind key="W-F3">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>3</to></action>
     </keybind>
     <keybind key="W-F4">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>4</to></action>
     </keybind>
     <keybind key="W-F5">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>5</to></action>
     </keybind>
     <keybind key="W-F6">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>6</to></action>
     </keybind>
     <keybind key="W-F7">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>7</to></action>
     </keybind>
     <keybind key="W-F8">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>8</to></action>
     </keybind>
     <keybind key="W-F9">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>9</to></action>
     </keybind>
     <keybind key="W-F10">
-      <action name="GoToDesktop"/>
+      <action name="GoToDesktop"><to>10</to></action>
+    </keybind>
+    <!-- bind mover para desktop -->
+    <keybind key="W-S-F1">
+      <action name="SendToDesktop"><to>1</to></action>
+    </keybind>
+    <keybind key="W-S-F2">
+      <action name="SendToDesktop"><to>2</to></action>
+    </keybind>
+    <keybind key="W-S-F3">
+      <action name="SendToDesktop"><to>3</to></action>
+    </keybind>
+    <keybind key="W-S-F4">
+      <action name="SendToDesktop"><to>4</to></action>
+    </keybind>
+    <keybind key="W-S-F5">
+      <action name="SendToDesktop"><to>5</to></action>
+    </keybind>
+    <keybind key="W-S-F6">
+      <action name="SendToDesktop"><to>6</to></action>
+    </keybind>
+    <keybind key="W-S-F7">
+      <action name="SendToDesktop"><to>7</to></action>
+    </keybind>
+    <keybind key="W-S-F8">
+      <action name="SendToDesktop"><to>8</to></action>
+    </keybind>
+    <keybind key="W-S-F9">
+      <action name="SendToDesktop"><to>9</to></action>
+    </keybind>
+    <keybind key="W-S-F10">
+      <action name="SendToDesktop"><to>10</to></action>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -388,20 +438,6 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
-    <!--
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows"/>
-    </keybind>
-    -->
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
