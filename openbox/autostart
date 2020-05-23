@@ -25,3 +25,4 @@ $TERMINAL_PADRAO &
 #xfsettingsd
 #$HOME/.config/polybar/launch.sh
 xfce4-panel
+numlockx &
