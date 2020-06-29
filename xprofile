@@ -1,0 +1,2 @@
+numlockx on &
+xcompmgr -cCfF -l 0 -t 0 -r 2 -o .01 &
