@@ -11,10 +11,6 @@ client.placeholder      #000000 #965959 #ffffff #000000   #0c0c0c
 #
 #client.background       #999999
 #client.background       #2F3136
-
-
-
-
 set $mod Mod4
 #cores
 #set $bg-color #2f343f
@@ -24,7 +20,6 @@ set $inactive-bg-color   #4286f4
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

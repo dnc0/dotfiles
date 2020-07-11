@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-
+:'
+dotfiles installer
+'
+#======= functions ======= 
 function copy(){
 	#install ohmyzsh
 	echo "download ohmyzsh..."
@@ -33,16 +36,24 @@ function create_menu(){
 	eval  mmaker -vf OpenBox3
 }
 function usage(){
-	echo "dotfile install script"
+	echo "dotfiles install script"
 	echo "./install [options]"
 	echo "options:"
-	echo "	-m --newmenu : create a new menu file"
-	echo " 	-h --help : help information"
+	echo "	-i,--install : install configfiles"
+	echo "	-m,--newmenu : create a new menu file"
+	echo "	-x,--make-init : create .xinitrc file"
+	echo " 	-h,--help : help information"
 }
 
-#Inicio da execução
+#======= start execution ======= 
 while [ "$1" != "" ];do
 	case $1 in
+		-i | --install )
+			copy
+			;;
+		-x | --make-init )
+			mk_xinit
+			;;
 		-h | --help )
 			usage
 			exit 0
@@ -56,5 +67,3 @@ while [ "$1" != "" ];do
 	shift
 	esac
 done
-copy
-mk_xinit
