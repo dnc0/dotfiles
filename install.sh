@@ -11,6 +11,8 @@ flag_ok_ohmyzsh=0
 flag_make_copy=0 #copy the config files
 flag_make_xinit=0 #create the .xinitrc file
 flag_make_menu=0 #create a new menu file
+flag_make_backup=0 #make backup of current config files
+flag_restore=0 #restore old configs
 #======= functions ======= 
 function backup(){
 	#create a backup of current config files
@@ -28,6 +30,24 @@ function backup(){
 	fi
 	if [ -e  $HOME/.xinitrc ];then
 		cp -v $HOME/.xinitrc $HOME/.xinitrc.bak
+	fi
+}
+function restore(){
+	#restore config files from backup
+	if [ -e  $HOME/.zshrc.bak ];then
+		cp -v $HOME/.zshrc.bak $HOME/.zshrc
+	fi
+	if [ -e  $HOME/.bashrc.bak ];then
+		cp -v $HOME/.bashrc.bak $HOME/.bashrc
+	fi
+	if [ -e  $HOME/.vimrc.bak ];then
+		cp -v $HOME/.vimrc.bak $HOME/.vimrc
+	fi
+	if [ -e  $HOME/.tmux.conf.bak ];then
+		cp -v $HOME/.tmux.conf.bak $HOME/.tmux.conf
+	fi
+	if [ -e  $HOME/.xinitrc.bak ];then
+		cp -v $HOME/.xinitrc.bak $HOME/.xinitrc
 	fi
 }
 
@@ -62,6 +82,7 @@ function copy(){
 	cp -v bashrc $HOME/.bashrc
 	cp -v xprofile $HOME/.xprofile
 	cp -v -r cool-retro-term $HOME/.local/share/cool-retro-term
+	cp -v geany $HOME/.config/
 	if [ $flag_ok_ohmyzsh -eq 0 ];then
 		echo "install ohmyzsh"
 		$HOME/install_ohmyzsh.sh --unattended --keep-zshrc
@@ -85,6 +106,7 @@ function usage(){
 	echo "./install [options]"
 	echo "options:"
 	echo "	-b,--backup : backup of current config files"
+	echo "	-r,--restore : restore old config files"
 	echo "	-i,--install : install configfiles"
 	echo "	-m,--newmenu : create a new menu file"
 	echo "	-x,--make-init : create .xinitrc file"
@@ -95,20 +117,23 @@ function usage(){
 while [ "$1" != "" ];do
 	case $1 in
 		-b | --backup )
-			backup
+			flag_make_backup=1
+			;;
+		-r | --restore )
+			flag_restore=1
 			;;
 		-i | --install )
-			copy
+			flag_make_copy=1
 			;;
 		-x | --make-init )
-			mk_xinit
+			flag_make_xinit=1
 			;;
 		-h | --help )
 			usage
 			exit 0
 			;;
 		-m | --newmenu )
-			create_menu
+			flag_make_menu=1
 			;;
 		* )
 			echo "option \"$1\" not exist"
@@ -116,3 +141,19 @@ while [ "$1" != "" ];do
 	esac
 	shift
 done
+
+if [ $flag_make_backup -gt 1 ];then
+	backup
+fi
+if [ $flag_make_xinit -gt 1 ];then
+	mk_xinit
+fi
+if [ $flag_make_copy -gt 1 ];then
+	copy
+fi
+if [ $flag_make_menu -gt 1 ];then
+	create_menu
+fi
+if [ $flag_restore -gt 1 ];then
+	restore
+fi
