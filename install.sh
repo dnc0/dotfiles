@@ -142,18 +142,18 @@ while [ "$1" != "" ];do
 	shift
 done
 
-if [ $flag_make_backup -gt 1 ];then
+if [ $flag_make_backup -gt 0 ];then
 	backup
 fi
-if [ $flag_make_xinit -gt 1 ];then
+if [ $flag_make_xinit -gt 0 ];then
 	mk_xinit
 fi
-if [ $flag_make_copy -gt 1 ];then
+if [ $flag_make_copy -gt 0 ];then
 	copy
 fi
-if [ $flag_make_menu -gt 1 ];then
+if [ $flag_make_menu -gt 0 ];then
 	create_menu
 fi
-if [ $flag_restore -gt 1 ];then
+if [ $flag_restore -gt 0 ];then
 	restore
 fi
