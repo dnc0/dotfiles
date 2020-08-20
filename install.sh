@@ -83,6 +83,11 @@ function copy(){
 	cp -v xprofile $HOME/.xprofile
 	cp -v -r cool-retro-term $HOME/.local/share/cool-retro-term
 	cp -v geany $HOME/.config/
+	if [ ! -e "$HOME/.config/termite" ];then
+		eval mkdir -v "$HOME/.config/termite"
+	fi
+	cp -v termite.config "$HOME/.config/termite/config"
+	cp -v Xdefaults "$HOME/.Xdefaults"
 	if [ $flag_ok_ohmyzsh -eq 0 ];then
 		echo "install ohmyzsh"
 		$HOME/install_ohmyzsh.sh --unattended --keep-zshrc

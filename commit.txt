@@ -1,0 +1,4 @@
+-novo arquivo de configuração geany(removido informações pessoais)
+-removido arquivos de configuração desnecessarios do geany
+-adicionado arquivo de configuração urxvt (Xdefaults)
+-adicionado arquivo de configuração termite (.config/termite/config)
