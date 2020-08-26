@@ -8,11 +8,7 @@ readonly OHMYZSH_DOWNLOAD_LINK="https://raw.githubusercontent.com/ohmyzsh/ohmyzs
 #======= variables =======
 #======= flags =======
 flag_ok_ohmyzsh=0
-flag_make_copy=0 #copy the config files
-flag_make_xinit=0 #create the .xinitrc file
-flag_make_menu=0 #create a new menu file
-flag_make_backup=0 #make backup of current config files
-flag_restore=0 #restore old configs
+flag_install_ohmyzsh=1
 #======= functions ======= 
 function backup(){
 	#create a backup of current config files
@@ -52,18 +48,26 @@ function restore(){
 }
 
 function copy(){
+	#copy all config files
 	#install ohmyzsh
-	echo "download ohmyzsh..."
-	if command -v wget 1>>/dev/null 2>>/dev/null ;then
-		#wget -O $HOME/install_ohmyzsh.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-		eval wget -q -O $HOME/install_ohmyzsh.sh "$OHMYZSH_DOWNLOAD_LINK"
-		chmod +x $HOME/install_ohmyzsh.sh 
-	elif command -v curl 1>>/dev/null 2>>/dev/null ;then
-		eval curl -S --show-error $OHMYZSH_DOWNLOAD_LINK -o $HOME/install_ohmyzsh.sh
-		chmod +x $HOME/install_ohmyzsh.sh 
-	else
-		echo "wget and curl is not installed"
-		echo "cannot get OhMyZsh, ignoring..."
+	if [ "$flag_install_ohmyzsh" -gt 0 ];then
+		echo "download ohmyzsh..."
+		if command -v wget 1>>/dev/null 2>>/dev/null ;then
+			#wget -O $HOME/install_ohmyzsh.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+			eval wget -q -O $HOME/install_ohmyzsh.sh "$OHMYZSH_DOWNLOAD_LINK"
+			flag_ok_ohmyzsh=$?
+			chmod +x $HOME/install_ohmyzsh.sh 
+		elif command -v curl 1>>/dev/null 2>>/dev/null ;then
+			eval curl -S --show-error $OHMYZSH_DOWNLOAD_LINK -o $HOME/install_ohmyzsh.sh
+			if [ -e "$HOME/install_ohmyzsh.sh" ];then
+				flag_ok_ohmyzsh=0
+				chmod +x $HOME/install_ohmyzsh.sh
+			else
+				flag_ok_ohmyzsh=1
+			fi
+		else
+			echo "nor wget or curl is not installed,cannot get OhMyZsh, ignoring..."
+		fi
 	fi
 
 	cp -v vimrc $HOME/.vimrc
@@ -82,25 +86,28 @@ function copy(){
 	cp -v bashrc $HOME/.bashrc
 	cp -v xprofile $HOME/.xprofile
 	cp -v -r cool-retro-term $HOME/.local/share/cool-retro-term
-	cp -v geany $HOME/.config/
+	cp -rv geany $HOME/.config/
 	if [ ! -e "$HOME/.config/termite" ];then
 		eval mkdir -v "$HOME/.config/termite"
 	fi
 	cp -v termite.config "$HOME/.config/termite/config"
 	cp -v Xdefaults "$HOME/.Xdefaults"
-	if [ $flag_ok_ohmyzsh -eq 0 ];then
-		echo "install ohmyzsh"
-		$HOME/install_ohmyzsh.sh --unattended --keep-zshrc
+	if [ "$flag_install_ohmyzsh" -gt 0 ] && [ "$flag_ok_ohmyzsh" -eq 0 ];then
+		echo "installing OhMyZsh"
+		eval "$HOME/install_ohmyzsh.sh --unattended --keep-zshrc"
 	else
-		echo "not installing ohmyzsh"
+		if [ "$flag_ok_ohmyzsh" -ne 0 ];then
+			echo "error when obtain ohmyzsh"
+		fi
 	fi
 }
 
 function mk_xinit(){
+	echo "creating xinitrc file with openbox"
 	echo "openbox-session" > $HOME/.xinitrc
 }
 function create_menu(){
-	if command -v mmaker ;then
+	if command -v mmaker 1>>/dev/null 2>>/dev/null ;then
 		eval  mmaker -vf OpenBox3
 	else
 		echo "error: menumaker(mmaker) is not installed"
@@ -115,50 +122,43 @@ function usage(){
 	echo "	-i,--install : install configfiles"
 	echo "	-m,--newmenu : create a new menu file"
 	echo "	-x,--make-init : create .xinitrc file"
+	echo "	-z,--no-ohmyzsh : not install ohmyzsh"
 	echo " 	-h,--help : help information"
 }
 
 #======= start execution ======= 
+if [ "$1" = "" ];then
+	echo "inform at least one option!"
+	usage
+	exit 0
+fi
 while [ "$1" != "" ];do
 	case $1 in
-		-b | --backup )
-			flag_make_backup=1
-			;;
-		-r | --restore )
-			flag_restore=1
-			;;
-		-i | --install )
-			flag_make_copy=1
-			;;
-		-x | --make-init )
-			flag_make_xinit=1
-			;;
 		-h | --help )
 			usage
 			exit 0
 			;;
+		-b | --backup )
+			backup
+			;;
+		-r | --restore )
+			restore
+			;;
+		-z | --no-ohmyzsh )
+			flag_install_ohmyzsh=0
+			;;
+		-i | --install )
+			copy
+			;;
+		-x | --make-init )
+			mk_xinit
+			;;
 		-m | --newmenu )
-			flag_make_menu=1
+			create_menu
 			;;
 		* )
-			echo "option \"$1\" not exist"
+			echo "error: option \"$1\" not exist"
 			exit 1
 	esac
 	shift
 done
-
-if [ $flag_make_backup -gt 0 ];then
-	backup
-fi
-if [ $flag_make_xinit -gt 0 ];then
-	mk_xinit
-fi
-if [ $flag_make_copy -gt 0 ];then
-	copy
-fi
-if [ $flag_make_menu -gt 0 ];then
-	create_menu
-fi
-if [ $flag_restore -gt 0 ];then
-	restore
-fi
