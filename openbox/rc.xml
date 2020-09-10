@@ -182,6 +182,14 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <!-- bind para trocar mostrar janela em todos os desktops -->
+    <keybind key="W-End">
+    	<action name="ToggleOmnipresent"/>
+	</keybind>
+    <!-- bind para trocar mostra janela sempre no topo(frente) -->
+    <keybind key="W-Home">
+  	  <action name="ToggleAlwaysOnTop"/>
+	</keybind>
     <!-- bind para maximizar janela-->
     <keybind key="W-KP_8">
       <action name="Maximize"/>

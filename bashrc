@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 alias ll="ls -l"
 PS1='[\u@\h \W]\$ '
 export EDITOR="vim"
+export VISUAL="$EDITOR"
 calc(){
         echo "scale=2;$*" | bc -l
 }
